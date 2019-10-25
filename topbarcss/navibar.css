@@ -27,7 +27,7 @@
   }
   
   .dropdown .dropbtn {
-    font-size: 16px;  
+    font-size: 9px;  
     border: none;
     outline: none;
     color: white;
@@ -64,7 +64,7 @@
   .column {
     float: left;
     width: 33.33%;
-    padding: 10px;
+    padding: 5px;
     background-color: #999;
     height: auto;
   }
@@ -72,7 +72,7 @@
   .column a {
     float: none;
     color: black;
-    padding: 16px;
+    padding: 5px;
     text-decoration: none;
     display: block;
     text-align: left;
