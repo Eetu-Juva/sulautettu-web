@@ -1,16 +1,36 @@
-<html><head>
- <script src="../depends/jq.js"></script>
+<html>
 
+<head>
+    <script src="../depends/jq.js"></script>
+    <meta charset="utf-8">
+    <title>moi</title>
+    <style>
+        p {
+            padding: 15px;
+            background-color: #00ff00;
+        }
+    </style>
 
-
+    <script>$(document).ready(function () {
+            $(".eka").click(function () {
+                $("p").hide();
+            });
+            $(".toka").click(function () {
+                $("p").show();
+            });
+        });
+    </script>
 
 </head>
+
 <body>
-<button type="button" class="eka">moi</button>
-<button type="button" class="toka">moi</button>
-<p>moi</p>
-<p>moi2</p>
-<p>moi3</p>   
+    <button type="button" class="eka">rka</button>
+    <button type="button" class="toka">toka</button>
+    <p>moi</p>
+    <p>moi2</p>
+    <p>moi3</p>
 
 
-</body></html>
+</body>
+
+</html>
