@@ -1,6 +1,5 @@
 function init() {
     $("#lar").click(animatefun);
-
 }
 
 function imghide() {
