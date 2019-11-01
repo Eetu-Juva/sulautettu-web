@@ -65,13 +65,19 @@
     float: left;
     width: 33.33%;
     padding: 5px;
-    background-color: #999;
+    background-color: #000;
     height: auto;
+    color: #fff;
+    letter-spacing: 1px;
+  }
+
+  .column h3{
+    text-decoration: underline;
   }
   
   .column a {
     float: none;
-    color: black;
+    color: #fff;
     padding: 5px;
     text-decoration: none;
     display: block;
