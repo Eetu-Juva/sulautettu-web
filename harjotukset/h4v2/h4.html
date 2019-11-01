@@ -6,7 +6,19 @@
     <title>h4v2</title>
     <link rel="stylesheet" href="h4.css">
     <script src="h4.js"></script>
+<script>
+function hideshow(a) {
+    var x = document.getElementById(a);
+    if (x.style.display === "block") {
+        $( x ).show(200)
+        x.style.display = "none";
+    } else {
+        $( x ).hide(200);
+        x.style.display = "block";
+    }
+}
 
+</script>
 </head>
 
 <body>
