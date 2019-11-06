@@ -18,6 +18,7 @@ function laatikkoFunktio(bx){
     }
     
 }
+
 function yhteystietoFunktio() {
     var x = document.getElementById("yhteystietolomake");
     var y = ["Nimi: ", "Email: ", "Puh: "];
@@ -28,9 +29,9 @@ function yhteystietoFunktio() {
       //console.log(i);
     }
     document.getElementById("yhteystiedotTuloste").innerHTML = text;
-  }
+}
 
-  var state = 0;
+var state = 0;
 function vaihda(){
     if(state == 0){
         document.getElementById("img").setAttribute("src","smiley2.png");
@@ -43,4 +44,4 @@ function vaihda(){
 
 
 
-  }
+}
