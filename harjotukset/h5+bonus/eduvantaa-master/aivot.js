@@ -1,6 +1,6 @@
 function laatikkoFunktio(bx){
     //alert("Nyt vaihdetaan laatikko"+ bx + ":n sisältöä!");
-    vaihda();
+    vaihda(); 
 
     if (bx == 1){
         document.getElementById("laatikko1").innerHTML = "<h1 class='uusiOtsikko1'>Tähän tulee uusi otsikko!</h1>" + 
@@ -8,7 +8,7 @@ function laatikkoFunktio(bx){
         document.getElementById("laatikko1").style.lineHeight = "50px";
     }
     else if (bx == 2){
-        document.getElementById("latiko2").innerHTML = "<ul><li>e</li><li>e</li><li>e</li><li>e</li><li>e</li><li>e</li><li>e</li></ul>";
+        document.getElementById("latiko2").innerHTML = " <table><tr><th>a</th><th>a</th><th>a</th></tr><tr><td>a</td><td>a</td><td>a</td></tr></table> ";
     }
     else if (bx == 3){
         document.getElementById("latikko3").innerHTML = '<img src="smiley1.png" ></img>';
