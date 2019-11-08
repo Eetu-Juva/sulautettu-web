@@ -29,3 +29,7 @@ function diagrammiFunktio(item_arr=[45,43,74,78,85,65,85,63,25]){
     
 
 } 
+
+function clear(){
+    
+}
