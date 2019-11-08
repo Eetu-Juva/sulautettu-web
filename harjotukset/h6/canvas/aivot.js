@@ -3,12 +3,14 @@ var draw_buf = {
     "x_lable":[],
     "y_lable":[],
     "dataarr":{},
-    "datalable":[],
+    "datalable":{},
     "dataarrcolor":[],
     "options":null
 }
-//lable = "name":    //nuber 1 foor cords 
-//      "position": [x,y] //number 1 foor corespondig data points coordinates
+//lablexy = [x,y]
+
+//datalable = "name":
+//             "lables":[]
 
 //dataarr = "name":
 //          "data":[x,y]
@@ -37,7 +39,9 @@ function deletedata(dataname){
     
 }
 
+function addlable(dataname,lables=0){
 
+}
 
 function diagrammiFunktio(item_arr=[45,43,74,78,85,65,85,63,25]){
     // etsitään harjoitus2.html sivulta elementti, jonka id=myCanvas
