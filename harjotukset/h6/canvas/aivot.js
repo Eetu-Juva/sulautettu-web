@@ -3,14 +3,14 @@ var draw_buf = {
     "x_lable":[],
     "y_lable":[],
     "dataarr":[],
-    "datalable":{},
+    "datalable":[],
     "dataarrcolor":[],
     "options":null
 }
 //lablexy = [x,y]
 
-//datalable = "name":
-//             "lables":[]
+//datalable = {"name":
+//             "lables":[]}
 
 //dataarr = "name":
 //          "data":[x,y]
@@ -40,16 +40,31 @@ function deletedata(dataname){
 }
 
 function addlable(dataname,lables=0){
+    var pushd = {"name":dataname , "labels":[]}
+    for(var i = 0;i<draw_buf.dataarr.length;i++){
+        if(draw_buf.dataarr[i].name == dataname){
 
+            if (lables===0){
+                pushd.labels.push([draw_buf.dataarr[i].data[0],draw_buf.dataarr[i].data[1]]);
+            }
+            else{
+
+            }
+
+        }//if(draw_buf.dataarr[i].name == dataname)
+    }//for(var i = 0;i<draw_buf.dataarr.length;i++)
+
+draw_buf.datalable.push(pushd);
 }
 
 function draw(){
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
     ctx.beginPath();
-    //console.log(draw_buf.dataarr[0]);
+    console.log(draw_buf.datalable[0]);
     ctx.strokeStyle = "#ff00ff";
     for (let i = 0; i < draw_buf.dataarr.length; i++) {
+        ctx.fillText(draw_buf.datalable[0].labels[i], draw_buf.dataarr[i].data[1], draw_buf.dataarr[i].data[0]);
         if(i==0){
             ctx.moveTo(draw_buf.dataarr[i].data[1],draw_buf.dataarr[i].data[0]);
         }
