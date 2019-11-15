@@ -33,7 +33,8 @@ function generatexy(xval,yval,xspase=20,yspase=20){
 function deletedata(dataname){
     for(var i = 0;i<draw_buf.dataarr.length;i++){
         if(draw_buf.dataarr[i].name == dataname){
-            draw_buf.dataarr[i].splice(i,1);
+            draw_buf.dataarr.splice(i,1);
+            i--;
         }
     }
     
@@ -61,7 +62,7 @@ function draw(){
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
     ctx.beginPath();
-    console.log(draw_buf.datalable[0]);
+    
     ctx.strokeStyle = "#ff00ff";
     for (let i = 0; i < draw_buf.dataarr.length; i++) {
         ctx.fillText(draw_buf.datalable[0].labels[i], draw_buf.dataarr[i].data[1], draw_buf.dataarr[i].data[0]);
@@ -109,6 +110,9 @@ function diagrammiFunktio(item_arr=[45,43,74,78,85,65,85,63,25]){
 
 } 
 
-function clear(){
-
+function clearc(){
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    //console.log(ctx.height);
+    ctx.clearRect(0,0,700,500);
 }
