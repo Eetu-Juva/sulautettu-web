@@ -2,7 +2,7 @@
 var draw_buf = {
     "x_lable":[],
     "y_lable":[],
-    "dataarr":{},
+    "dataarr":[],
     "datalable":{},
     "dataarrcolor":[],
     "options":null
@@ -40,6 +40,26 @@ function deletedata(dataname){
 }
 
 function addlable(dataname,lables=0){
+
+}
+
+function draw(){
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    //console.log(draw_buf.dataarr[0]);
+    ctx.strokeStyle = "#ff00ff";
+    for (let i = 0; i < draw_buf.dataarr.length; i++) {
+        if(i==0){
+            ctx.moveTo(draw_buf.dataarr[i].data[1],draw_buf.dataarr[i].data[0]);
+        }
+        else{
+            ctx.lineTo(draw_buf.dataarr[i].data[1], draw_buf.dataarr[i].data[0]);
+        }
+        
+    }
+
+    ctx.stroke();
 
 }
 
