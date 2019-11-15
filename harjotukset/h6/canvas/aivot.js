@@ -9,7 +9,7 @@ var draw_buf = {
 }
 //lablexy = [x,y]
 
-//datalable = {"name":
+//datalable = {"name": 
 //             "lables":[]}
 
 //dataarr = "name":
