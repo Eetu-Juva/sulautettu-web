@@ -44,17 +44,18 @@ function deletedata(dataname) {
 
 function addlable(dataname, lables = 0) {
     var pushd = { "name": dataname, "labels": [] }
-    for (var i = 0; i < draw_buf.dataarr.length; i++) {
+    for(var i = 0; i < draw_buf.dataarr.length; i++) {
         if (draw_buf.dataarr[i][0].name == dataname) {
             for (let j = 0; j < draw_buf.dataarr[i].length; j++) {
 
-                if (lables === 0) {
+                if(lables === 0) {
                     pushd.labels.push([draw_buf.dataarr[i][j].data[0], draw_buf.dataarr[i][j].data[1]]);
                 }
                 else {
 
                 }
-            }
+                
+            }//for(let j = 0; j < draw_buf.dataarr[i].length; j++)
         }//if(draw_buf.dataarr[i].name == dataname)
     }//for(var i = 0;i<draw_buf.dataarr.length;i++)
 
