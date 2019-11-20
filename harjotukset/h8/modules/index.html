@@ -15,7 +15,7 @@
 
                 cache: false,
                 success: function (data) {
-                    $("#joi").html(data);
+                    $(".soi").text(data);
                     alert(data);                
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -26,13 +26,18 @@
     </script>
         
 </head>
-    
-
 <body>
+    
+    
     <button onclick="haeTiedostosta()">hae</button>
-    <div id="tulokset">
-        <p id="joi">moi</p>
+    <div id="moi" class="soi">
+      <p>gor</p>
     </div>
+    <div>
+        <p>llguvhy</p>
+    </div>
+    <p>doi</p>
+   
 </body>
 
 </html>
