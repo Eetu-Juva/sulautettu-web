@@ -14,9 +14,8 @@
 
                 cache: false,
                 success: function (data) {
-                    $("#tulokset").text(data);
-                    alert(data);
-                    
+                    $("#tulokset").val(data);
+                    alert();                
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     console.log("error");
