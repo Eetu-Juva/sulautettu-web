@@ -1,16 +1,21 @@
-const http = require('http');
+var fs = require("fs");
+var path = require("path");
+var cors = require("cors");
+var express = require("express");
 
-const hostname = '127.0.0.1';
-const port = 3000;
+var app = express();
+app.use(cors());
 
-
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+app.get("/arvot", (req, res, next) => {
+      var tiedosto = bufferFile ("arvot.txt");
+      res.send(tiedosto);
+  });
+  app.listen(3000, ()=>{
   
-});
-
-server.listen(port, hostname, () => {
-  //console.log(`Server running at http://${hostname}:${port}/`);
-});
+  });
+  
+  function bufferFile(relPath){
+      return fs.readFileSync(path.join(__dirname, relPath),"utf8"); //palauttaa stringin
+  }
+ 
+  
