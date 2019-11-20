@@ -33,9 +33,10 @@ function generatexy(xval, yval, xspase = 20, yspase = 20) {
 }
 
 function deletedata(dataname) {
-    for (var i = 0; i < draw_buf.dataarr.length; i++) {
-        if (draw_buf.dataarr[i].name == dataname) {
-            draw_buf.dataarr.splice(i, 1);
+    //loop all elements from each eleme
+    for (var i = 0; i < draw_buf.dataarr[0].length; i++) {
+        if (draw_buf.dataarr[0][i].name == dataname) {
+            draw_buf.dataarr[0].splice(i, 1);
             i--;
         }
     }
