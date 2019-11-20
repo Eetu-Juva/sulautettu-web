@@ -8,14 +8,15 @@
     <script src="../../../depends/jq.js"></script> 
     <script>
         function haeTiedostosta() {
+            
             $.ajax({
                 type: "GET",
                 url: "http://localhost:3000/arvo",
 
                 cache: false,
                 success: function (data) {
-                    $("#tulokset").val(data);
-                    alert();                
+                    $("#joi").html(data);
+                    alert(data);                
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                     console.log("error");
@@ -28,9 +29,9 @@
     
 
 <body>
-    <button onclick="haeTiedostosta()">piirrä</button>
+    <button onclick="haeTiedostosta()">hae</button>
     <div id="tulokset">
-
+        <p id="joi">moi</p>
     </div>
 </body>
 
