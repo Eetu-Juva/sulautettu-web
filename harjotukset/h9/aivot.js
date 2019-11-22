@@ -9,7 +9,7 @@ var draw_buf = {
 }
 
 
-//data [{dataname:"",[data]},...]
+//var = data [{dataname:"",[data]},...]
 
 function generatedata(arr, name, spase=20) {
     var pushd = [];
@@ -142,5 +142,5 @@ function haeTiedostosta(name) {
 function parser(data){
 
 
-    return [0];
+    return data;
 }
