@@ -9,14 +9,18 @@ var draw_buf = {
 }
 
 
-//var = data [{dataname:"",[data]},...]
+var dataarr = [] ;
+//[{name:"",[data,..]}]
+//data = [dat,cord]
+var lable = [];
 
 function generatedata(arr, name, spase=20) {
     var pushd = [];
     for (var i = 0; i < arr.length; i++) {
-        pushd.push({ "name": name, "data": [arr[i], i * spase] });
+        //alert(arr[i]);
+        pushd.push( [parseFloat(arr[i]), i * spase]);
     }
-    draw_buf.dataarr.push(pushd);
+    dataarr.push({"name":name ,"data":pushd});
 }
 
 function generatexy(xval, yval, xspase = 20, yspase = 20) {
@@ -30,15 +34,16 @@ function generatexy(xval, yval, xspase = 20, yspase = 20) {
 
 function deletedata(dataname) {
     //loop all elements from each eleme
-    for (var i = 0; i < draw_buf.dataarr[0].length; i++) {
-        if (draw_buf.dataarr[0][i].name == dataname) {
-            draw_buf.dataarr[0].splice(i, 1);
+    for (var i = 0; i < dataarr.length; i++) {
+        if (dataarr[i].name == dataname) {
+            dataarr.splice(i, 1);
             i--;
         }
     }
 
 }
 
+//todoo
 function addlable(dataname, lables = 0) {
     var pushd = { "name": dataname, "labels": [] }
     for(var i = 0; i < draw_buf.dataarr.length; i++) {
@@ -63,27 +68,22 @@ function draw(dataname) {
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
     ctx.beginPath();
+   // alert(dataname);
 
     ctx.strokeStyle = "#ff00ff";
-    for (let j = 0; j < draw_buf.dataarr.length; j++) {
-        if (draw_buf.dataarr[j].name === dataname) {
-
-            for (let i = 0; i < draw_buf.dataarr[j].length; i++) {
-
-                ctx.fillText(draw_buf.datalable[0].labels[i], draw_buf.dataarr[j][i].data[1], draw_buf.dataarr[j][i].data[0]);
+    for (let j = 0; j < dataarr.length; j++) {
+        if (dataarr[j].name == dataname) {
+            for (let i = 0; i < dataarr[j].data.length; i++) {
                 if (i == 0) {
-                    ctx.moveTo(draw_buf.dataarr[j][i].data[1], draw_buf.dataarr[j][i].data[0]);
+                    ctx.moveTo(dataarr[j].data[i][1] , dataarr[j].data[i][0]);
                 }
                 else {
-                    ctx.lineTo(draw_buf.dataarr[j][i].data[1], draw_buf.dataarr[j][i].data[0]);
+                    ctx.lineTo(dataarr[j].data[i][1] , dataarr[j].data[i][0]);
                 }
-
-            }//for (let i = 0; i < draw_buf.dataarr[j].length; i++)
-
+            }
             ctx.stroke();
-
-        }//if (draw_buf.dataarr === dataname)
-    }//for (let j = 0; j < draw_buf.datalable[j].length; j++)
+        }
+    }
 }
 
 /*function diagrammiFunktio(item_arr = [45, 43, 74, 78, 85, 65, 85, 63, 25]) {
@@ -142,5 +142,5 @@ function haeTiedostosta(name) {
 function parser(data){
 
 
-    return data;
+    return data.split(":");
 }
