@@ -7,13 +7,9 @@ var draw_buf = {
     "dataarrcolor": [],
     "options": null
 }
-//lablexy = [x,y]
 
-//datalable = {"name": 
-//             "lables":[]}
 
-//dataarr = "name":
-//          "data":[x,y]
+//data [{dataname:"",[data]},...]
 
 function generatedata(arr, name, spase=20) {
     var pushd = [];
@@ -146,5 +142,5 @@ function haeTiedostosta(name) {
 function parser(data){
 
 
-    return 0;
+    return [0];
 }
