@@ -128,7 +128,7 @@ function haeTiedostosta(name) {
         success: function (data) {
             generatedata(parser(data),name);
             addlable(name);
-            alert(data);                
+           // alert(data);                
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             console.log("error");
