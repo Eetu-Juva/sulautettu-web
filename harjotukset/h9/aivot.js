@@ -44,24 +44,20 @@ function deletedata(dataname) {
 }
 
 //todoo
-function addlable(dataname, lables = 0) {
-    var pushd = { "name": dataname, "labels": [] }
-    for(var i = 0; i < draw_buf.dataarr.length; i++) {
-        if (draw_buf.dataarr[i][0].name == dataname) {
-            for (let j = 0; j < draw_buf.dataarr[i].length; j++) {
-
-                if(lables === 0) {
-                    pushd.labels.push([draw_buf.dataarr[i][j].data[0], draw_buf.dataarr[i][j].data[1]]);
+function addlable(dataname) {
+    var pushd = [];
+        for (let i = 0; i < dataarr.length; i++) {
+            if (dataarr[i].name === dataname) {
+                for (let j = 0; j < dataarr[i].data.length; j++) {
+                    
+                     pushd.push(dataarr[i].data[j][0]);
                 }
-                else {
+               
+            }
+            
+        }
 
-                }
-                
-            }//for(let j = 0; j < draw_buf.dataarr[i].length; j++)
-        }//if(draw_buf.dataarr[i].name == dataname)
-    }//for(var i = 0;i<draw_buf.dataarr.length;i++)
-
-    draw_buf.datalable.push(pushd);
+    lable.push({"name":name ,"lable":pushd});
 }
 
 function draw(dataname) {
@@ -74,6 +70,7 @@ function draw(dataname) {
     for (let j = 0; j < dataarr.length; j++) {
         if (dataarr[j].name == dataname) {
             for (let i = 0; i < dataarr[j].data.length; i++) {
+                ctx.fillText(lable[j].lable[i], dataarr[j].data[i][1], dataarr[j].data[i][0])
                 if (i == 0) {
                     ctx.moveTo(dataarr[j].data[i][1] , dataarr[j].data[i][0]);
                 }
