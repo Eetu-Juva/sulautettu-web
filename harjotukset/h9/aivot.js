@@ -9,18 +9,18 @@ var draw_buf = {
 }
 
 
-var dataarr = [] ;
+var dataarr = [];
 //[{name:"",[data,..]}]
 //data = [dat,cord]
 var lable = [];
 
-function generatedata(arr, name, spase=20) {
+function generatedata(arr, name, spase = 20) {
     var pushd = [];
     for (var i = 0; i < arr.length; i++) {
         //alert(arr[i]);
-        pushd.push( [parseFloat(arr[i]), i * spase]);
+        pushd.push([parseFloat(arr[i]), i * spase]);
     }
-    dataarr.push({"name":name ,"data":pushd});
+    dataarr.push({ "name": name, "data": pushd });
 }
 
 function generatexy(xval, yval, xspase = 20, yspase = 20) {
@@ -46,25 +46,25 @@ function deletedata(dataname) {
 //todoo
 function addlable(dataname) {
     var pushd = [];
-        for (let i = 0; i < dataarr.length; i++) {
-            if (dataarr[i].name === dataname) {
-                for (let j = 0; j < dataarr[i].data.length; j++) {
-                    
-                     pushd.push(dataarr[i].data[j][0]);
-                }
-               
+    for (let i = 0; i < dataarr.length; i++) {
+        if (dataarr[i].name === dataname) {
+            for (let j = 0; j < dataarr[i].data.length; j++) {
+
+                pushd.push(dataarr[i].data[j][0]);
             }
-            
+
         }
 
-    lable.push({"name":name ,"lable":pushd});
+    }
+
+    lable.push({ "name": name, "lable": pushd });
 }
 
 function draw(dataname) {
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
     ctx.beginPath();
-   // alert(dataname);
+    // alert(dataname);
 
     ctx.strokeStyle = "#ff00ff";
     for (let j = 0; j < dataarr.length; j++) {
@@ -72,10 +72,10 @@ function draw(dataname) {
             for (let i = 0; i < dataarr[j].data.length; i++) {
                 ctx.fillText(lable[j].lable[i], dataarr[j].data[i][1], dataarr[j].data[i][0])
                 if (i == 0) {
-                    ctx.moveTo(dataarr[j].data[i][1] , dataarr[j].data[i][0]);
+                    ctx.moveTo(dataarr[j].data[i][1], dataarr[j].data[i][0]);
                 }
                 else {
-                    ctx.lineTo(dataarr[j].data[i][1] , dataarr[j].data[i][0]);
+                    ctx.lineTo(dataarr[j].data[i][1], dataarr[j].data[i][0]);
                 }
             }
             ctx.stroke();
@@ -119,16 +119,16 @@ function clearc() {
 }
 
 function haeTiedostosta(name) {
-            
+
     $.ajax({
         type: "GET",
         url: "http://localhost:3000/arvo",
 
         cache: false,
         success: function (data) {
-            generatedata(parser(data),name);
+            generatedata(parser(data), name);
             addlable(name);
-           // alert(data);                
+            // alert(data);                
         },
         error: function (XMLHttpRequest, textStatus, errorThrown) {
             console.log("error");
@@ -136,7 +136,7 @@ function haeTiedostosta(name) {
     });
 }
 
-function parser(data){
+function parser(data) {
 
 
     return data.split(":");
