@@ -4,6 +4,8 @@
     
     --badingh:14px;
     --badingw:16px;
+
+    --textwidhbeg:100px;
 }
 
 *{
@@ -16,6 +18,7 @@ html{
    
 body {
   margin: 0;
+  height: 100%;
 }
     
 .navbar {
@@ -124,6 +127,17 @@ body {
     
     height:calc(100% - var(--topbarh));
     background-color: #00ff00;
+}
+
+#beg{
+    margin-left: calc(calc(100% - 200px) / 2);
+    margin-right: calc(calc(100% - 200px) / 2);
+
+}
+
+#begtext{
+    margin-left: calc(calc(100% - var(--textwidhbeg)) / 2);
+    margin-right: calc(calc(100% - var(--textwidhbeg)) / 2);
 }
 
 
