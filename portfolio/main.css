@@ -121,7 +121,8 @@ body {
     border-width: 10px;
     height: calc(100% - var(--topbarh)) ;
     width: 100%;*/
-    height:94%;
+    
+    height:calc(100% - var(--topbarh));
     background-color: #00ff00;
 }
 
