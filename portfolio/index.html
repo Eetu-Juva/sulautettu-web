@@ -54,6 +54,7 @@
     <!----ALOTA TÄSTÄ \/-->
 
     <div id="page" class="page">
+        
         <div id="beg">
             <div id="begtext">
                 <h4>Eetu Juva</h4>
@@ -61,9 +62,17 @@
             </div>
             <img src="" alt="omakuva" width="200px" height="200px">
         </div>
-        <button id="btn1" onclick="change()">vaihda tausta värijä</button>
-        <input id="colorcage" type="text" placeholder="xxxxxx | xxx">
 
+
+        <div id="bkcange">
+            <button id="btn1" onclick="change()">vaihda tausta värijä</button>
+            <input id="colorcage" type="text" placeholder="xxxxxx | xxx">
+        </div>
+
+
+        <div id="imgcaange">
+            <input type="file" id="input" onchange="handleFiles(this.files)">
+        </div>
 
 
 

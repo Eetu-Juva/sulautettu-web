@@ -135,9 +135,20 @@ body {
 
 }
 
+#bkcange{
+  border: solid;
+  border-width: 2px;
+  width: 290px;
+}
+
+#imgcaange{
+  
+}
+
 #begtext{
-    margin-left: calc(calc(100% - var(--textwidhbeg)) / 2);
-    margin-right: calc(calc(100% - var(--textwidhbeg)) / 2);
+  text-align: center;
+  margin-left: calc(calc(100% - var(--textwidhbeg)) / 2);
+  margin-right: calc(calc(100% - var(--textwidhbeg)) / 2);
 }
 
 
