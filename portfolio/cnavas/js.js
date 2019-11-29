@@ -41,10 +41,6 @@ function generatedata(arr, name, spase = 20) {
 function generatey() {
     var pushd = [];
     
-    for (let i = 0; i < 1; i++) {
-        
-        
-    }
 
 
     xylab.y.push(pushd);
@@ -83,7 +79,7 @@ function draw(dataname) {
     var ctx = c.getContext("2d");
     ctx.beginPath();
     var mult = -1;
-    var ofset = document.getElementById("myCanvas").height;
+    var ofset = c.height;
     //alert(ofset);
     // alert(dataname);
 
