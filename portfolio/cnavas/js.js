@@ -16,7 +16,7 @@ var lable = [];
 var xylab = {"x":[] ,"y":[]}
 
 var mid;
-var vsacale = 2;
+var vsacale = 5;
 
 function setserver(){
     datasrc = document.getElementById("serveraddr").value;
@@ -39,11 +39,16 @@ function generatedata(arr, name, spase = 20) {
 }
 
 function generatey() {
-    var pushd = [];
     
+    var hei = document.getElementById("myCanvas").height;
+    //alert([0,100*vsacale-hei/2]);
+
+    for (let i = 0; i<= hei; i+=vsacale*10) {
+        xylab.y.push([i - hei/2,(i - hei/2)/5]);
+    }
 
 
-    xylab.y.push(pushd);
+   
 }
 
 function deletedata(dataname) {
@@ -82,18 +87,19 @@ function draw(dataname) {
     var ofset = c.height;
     //alert(ofset);
     // alert(dataname);
+    var a = 20;
 
     ctx.strokeStyle = "#ff00ff";
     for (let j = 0; j < dataarr.length; j++) {
         if (dataarr[j].name == dataname) {
             for (let i = 0; i < dataarr[j].data.length; i++) {
-                ctx.fillText(lable[j].lable[i] /vsacale, dataarr[j].data[i][1], dataarr[j].data[i][0]*mult + ofset);
+                ctx.fillText(lable[j].lable[i] /vsacale, (dataarr[j].data[i][1])+a, dataarr[j].data[i][0]*mult + ofset);
                 if (i == 0) {
-                    ctx.moveTo(dataarr[j].data[i][1], dataarr[j].data[i][0]*mult +ofset);
+                    ctx.moveTo((dataarr[j].data[i][1])+a, dataarr[j].data[i][0]*mult +ofset);
                     //alert(dataarr[j].data[i][0]*mult +ofset);
                 }
                 else {
-                    ctx.lineTo(dataarr[j].data[i][1], dataarr[j].data[i][0]*mult +ofset);
+                    ctx.lineTo((dataarr[j].data[i][1])+a, dataarr[j].data[i][0]*mult +ofset);
                 }
             }
             ctx.stroke();
@@ -101,6 +107,20 @@ function draw(dataname) {
 
     }//for (let j = 0; j < dataarr.length; j++)
 
+    generatey();
+    for (let i = 0; i < xylab.y.length; i++) {
+        ctx.fillText(xylab.y[i][1],0,(xylab.y[i][0]*-1)+mid);
+        
+    }
+
+    /*var ctx2 = c.getContext("2d");
+    ctx2.strokeStyle = "#00ff00";
+    ctx2.moveTo(0,mid);
+    ctx2.lineTo(700,mid);
+    ctx2.stroke();
+    ctx2.moveTo(0,mid-100);
+    ctx2.lineTo(700,mid-100);
+    ctx2.stroke();*/
 
 
 }
