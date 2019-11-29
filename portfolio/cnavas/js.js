@@ -10,11 +10,13 @@ var draw_buf = {
 
 var datasrc = null;
 var dataarr = [];
-var mid;
-var vsacale = 6;
 //[{name:"",[data,..]}]
 //data = [dat,cord]
 var lable = [];
+var xylab = {"x":[] ,"y":[]}
+
+var mid;
+var vsacale = 2;
 
 function setserver(){
     datasrc = document.getElementById("serveraddr").value;
@@ -36,13 +38,16 @@ function generatedata(arr, name, spase = 20) {
     dataarr.push({ "name": name, "data": pushd });
 }
 
-function generatexy(xval, yval, xspase = 20, yspase = 20) {
-    for (var i = 0; i < xval.length; i++) {
-        draw_buf.x_lable.push([xval[i], i * xspase]);
+function generatey() {
+    var pushd = [];
+    
+    for (let i = 0; i < 1; i++) {
+        
+        
     }
-    for (var i = 0; i < yval.length; i++) {
-        draw_buf.y_lable.push([yval[i], i * yspase]);
-    }
+
+
+    xylab.y.push(pushd);
 }
 
 function deletedata(dataname) {
