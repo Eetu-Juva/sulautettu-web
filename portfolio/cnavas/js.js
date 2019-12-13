@@ -161,7 +161,7 @@ function clearc() {
 }
 
 function haeTiedostosta(name) {
-
+//192.168.1.29:3000/e --eiliitytähän tiedoatoon
     $.ajax({
         type: "GET",
         url: datasrc,
