@@ -9,6 +9,8 @@
     --color-cange-widh:185px;
 
     --textwidhbeg:100px;
+
+    --bkcolor: #00cc44;
 }
 
 *{
@@ -129,7 +131,7 @@ body {
     width: 100%;*/
     
     height:calc(100% - var(--topbarh));
-    background-color: #00ff00;
+    background-color: var(--bkcolor);
 }
 
 #beg{
@@ -152,6 +154,13 @@ body {
   text-align: center;
   margin-left: calc(calc(100% - var(--textwidhbeg)) / 2);
   margin-right: calc(calc(100% - var(--textwidhbeg)) / 2);
+}
+
+#image{
+  border: solid;
+  border-width: 2px;
+  border-color: #66ccff;
+  
 }
 
 
