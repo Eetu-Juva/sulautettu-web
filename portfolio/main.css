@@ -8,7 +8,9 @@
 
     --color-cange-widh:185px;
 
-    --textwidhbeg:100px;
+    --textwidhbeg:300px;
+
+    --textcolor: #bbd8fb;
 
     --bkcolor: #00cc44;
 }
@@ -131,13 +133,25 @@ body {
     width: 100%;*/
     
     height:calc(100% - var(--topbarh));
-    background-color: var(--bkcolor);
+    color: var(--textcolor);
+    font-size: var(--navi-font-size);
+    
+    
+}
+
+#bkimg{
+  position: absolute;
+  width: 100%;
+  height: calc(100% - var(--topbarh));;
+  background-color: var(--bkcolor);
+  background-image: url('bakraund.PNG');
+  filter: blur(8px);
+  z-index: -1;
 }
 
 #beg{
-    margin-left: calc(calc(100% - 200px) / 2);
-    margin-right: calc(calc(100% - 200px) / 2);
-
+  margin-left: calc(calc(100% - 200px) / 2);
+  margin-right: calc(calc(100% - 200px) / 2);
 }
 
 #bkcange{
